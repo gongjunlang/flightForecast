@@ -9,6 +9,7 @@ import org.junit.Test;
 
 /**
  * Created by kangbiao on 2016/12/17.
+ *
  */
 public class FlightPriceCrawler {
 	@Test
@@ -25,4 +26,5 @@ public class FlightPriceCrawler {
 		jsonString = jsonString.split("\\(")[1].split("\\)")[0];
 		System.out.println(jsonString);
 	}
+
 }
