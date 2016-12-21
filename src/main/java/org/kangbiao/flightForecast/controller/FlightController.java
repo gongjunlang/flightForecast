@@ -23,7 +23,8 @@ public class FlightController {
     public String  getPriceTrend(@Param(value = "orgCityCode") String orgCityCode,
                                  @Param(value = "dstCityCode") String dstCityCode) throws IOException {
 
-        String url= priceTrendUrl.replaceFirst("\\{dstCityCode\\}",dstCityCode).replaceFirst("\\{orgCityCode\\}",orgCityCode);
+        String url= priceTrendUrl.replaceFirst("\\{dstCityCode\\}",dstCityCode)
+                .replaceFirst("\\{orgCityCode\\}",orgCityCode);
         String response=Jsoup.connect(url).ignoreContentType(true).execute().body();
         String responseJson=response.split("\\(")[1].replace(")","");
         return responseJson;

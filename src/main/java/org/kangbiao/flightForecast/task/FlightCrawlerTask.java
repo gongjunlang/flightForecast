@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
-import java.util.logging.StreamHandler;
 
 /**
  * Created by kangbiao on 2016/12/18.
@@ -22,7 +20,6 @@ public class FlightCrawlerTask {
 
     @Value("${flight.interface.price-trend-url}")
     private String priceTrendUrl;
-
 
     /**
      * 每天两点执行爬虫任务

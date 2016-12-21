@@ -1,6 +1,5 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.junit.Test;
 
@@ -12,7 +11,6 @@ import java.util.Map;
  * Created by kangbiao on 2016/12/17.
  *
  */
-
 public class CrawlerTest {
 
     @Test
