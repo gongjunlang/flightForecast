@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="../plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/echarts/echarts.common.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="padding-top: 50px">
+    <div class="row">
+<ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation"><a href="flightForeacastBuy.html">机票价格分析</a></li>
+    <li role="presentation" class="active"><a href="crawlerConfig.html">爬虫任务配置</a></li>
+    <li role="presentation"><a href="mailConfig.html">邮件提醒配置</a></li>
+</ul>
+    </div>
+    <div class="row" style="margin-top: 50px">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" style="margin-bottom: 10px">新增任务配置</button>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="main" style="width: 100%;height:400px;"></div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myLargeModalLabel">新增任务配置</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="orgCity" class="col-md-2 control-label">出发城市</label>
+                        <div class="col-md-8">
+                            <select name="orgCity" id="orgCity" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="distCity" class="col-md-2 control-label">目的城市</label>
+                        <div class="col-md-8">
+                            <select name="distCity" id="distCity" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="col-md-2 control-label">初始状态</label>
+                        <div class="col-md-8">
+                            <select name="status" id="status" class="form-control">
+                                <option value="1">暂停</option>
+                                <option value="2">执行</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/config.js"></script>
+<script src="../plugin/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
