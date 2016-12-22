@@ -7,3 +7,4 @@ var host="localhost:63342/";
 var urlConfig={};
 
 urlConfig.getCity=host+"city/getAll";
+urlConfig.getPriceTrend=host+"flight/getPriceTrend";

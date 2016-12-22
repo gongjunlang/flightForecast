@@ -33,6 +33,10 @@ public class CrawlerTest {
             return;
         }
         ArrayList flightPrices=(ArrayList)jsonObject.get("data");
+        if (flightPrices==null||flightPrices.size()<1){
+            //TODO 航班价格信息不存在
+            return;
+        }
         for (Object flightPrice:flightPrices){
             System.out.println(((Map)flightPrice).get("date"));
         }

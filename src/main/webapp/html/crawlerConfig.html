@@ -13,14 +13,16 @@
 
 <div class="container" style="padding-top: 50px">
     <div class="row">
-<ul class="nav nav-tabs nav-justified" role="tablist">
-    <li role="presentation"><a href="flightForeacastBuy.html">机票价格分析</a></li>
-    <li role="presentation" class="active"><a href="crawlerConfig.html">爬虫任务配置</a></li>
-    <li role="presentation"><a href="mailConfig.html">邮件提醒配置</a></li>
-</ul>
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation"><a href="flightForeacastBuy.html">机票价格分析</a></li>
+            <li role="presentation" class="active"><a href="crawlerConfig.html">爬虫任务配置</a></li>
+            <li role="presentation"><a href="mailConfig.html">邮件提醒配置</a></li>
+        </ul>
     </div>
     <div class="row" style="margin-top: 50px">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" style="margin-bottom: 10px">新增任务配置</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg"
+                style="margin-bottom: 10px">新增任务配置
+        </button>
     </div>
     <div class="row">
         <table class="table table-bordered table-hover">
@@ -41,7 +43,9 @@
                 <td>4</td>
                 <td>2016-12-22</td>
                 <td><span style="color: green">执行中</span></td>
-                <td><button class="btn btn-primary btn-sm">暂停</button></td>
+                <td>
+                    <button class="btn btn-primary btn-sm">暂停</button>
+                </td>
             </tr>
             <tr>
                 <td>成都</td>
@@ -49,18 +53,22 @@
                 <td>0</td>
                 <td>--</td>
                 <td><span style="color: red;">未执行</span></td>
-                <td><button class="btn btn-primary btn-sm">开始</button></td>
+                <td>
+                    <button class="btn btn-primary btn-sm">开始</button>
+                </td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myLargeModalLabel">新增任务配置</h4>
             </div>
             <div class="modal-body">
