@@ -26,8 +26,7 @@ public class FlightController {
         String url= priceTrendUrl.replaceFirst("\\{dstCityCode\\}",dstCityCode)
                 .replaceFirst("\\{orgCityCode\\}",orgCityCode);
         String response=Jsoup.connect(url).ignoreContentType(true).execute().body();
-        String responseJson=response.split("\\(")[1].replace(")","");
-        return responseJson;
+        return response.split("\\(")[1].replace(")","");
     }
 
 }

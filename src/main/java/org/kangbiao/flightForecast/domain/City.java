@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Table(name = "city")
 public class City {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
 
     @Column(name="cityCode")
@@ -78,5 +79,13 @@ public class City {
 
     public void setAbroad(String abroad) {
         this.abroad = abroad;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
