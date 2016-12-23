@@ -29,6 +29,11 @@ public class Response {
         return status;
     }
 
+    public void success(){
+        this.status=true;
+        this.msg="ok";
+    }
+
     public void setStatus(Boolean status) {
         this.status = status;
     }

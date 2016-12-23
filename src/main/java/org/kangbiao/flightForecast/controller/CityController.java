@@ -24,4 +24,9 @@ public class CityController {
         return (ArrayList<City>) cityDao.findAll();
     }
 
+
+
+
+
+
 }

@@ -54,6 +54,7 @@ public class FlightController {
             return response;
         }
         response.setData(flightPriceDao.findByTaskIdBuyDate(crawlerTask.getId(),date));
+        response.success();
         return response;
     }
 }
