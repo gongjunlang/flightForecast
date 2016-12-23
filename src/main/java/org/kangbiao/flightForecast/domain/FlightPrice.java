@@ -22,6 +22,9 @@ public class FlightPrice {
 
     private Integer crawlerTaskId;
 
+
+    public FlightPrice() {}
+
     public FlightPrice(String buyDate, String ticketDate, String price, Integer crawlerTaskId) {
         this.buyDate = buyDate;
         this.ticketDate = ticketDate;

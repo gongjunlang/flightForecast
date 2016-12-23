@@ -25,7 +25,7 @@ public class TestController {
     private CrawlerTaskDao crawlerTaskDao;
 
     @RequestMapping("/")
-    List<CrawlerTask> home() {
-        return crawlerTaskDao.findByStatus(1);
+    CrawlerTask home() {
+        return crawlerTaskDao.findByOrgDistCityCode("2802","902");
     }
 }

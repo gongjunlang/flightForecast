@@ -4,7 +4,10 @@ import org.jsoup.Jsoup;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -15,10 +18,10 @@ public class CrawlerTest {
 
     @Test
     public void test(){
-        String temp="https://flight-api.tuniu.com/query/queryCalendarPrices?callback=jQuery17207817263226723168_1479379501967&%7B%22orgCityCode%22:%22{orgCityCode}%22,%22dstCityCode%22:%22{dstCityCode}%22,%22type%22:1,%22backDate%22:%22%22%7D";
-
-        System.out.println(temp.replaceFirst("\\{dstCityCode\\}","ssssssssss"));
-//        System.out.println(String.format(temp,"sssss","ssssssss"));
+        Date date=new Date();
+        DateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+        String time=format.format(date);
+        System.out.println(time);
     }
 
     @Test

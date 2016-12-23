@@ -1,7 +1,9 @@
 package org.kangbiao.flightForecast.dao;
 
 import org.kangbiao.flightForecast.domain.CrawlerTask;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -19,5 +21,8 @@ public interface CrawlerTaskDao extends CrudRepository<CrawlerTask,Integer> {
 
 
     ArrayList<CrawlerTask> findByStatus(Integer status);
+
+    @Query("from CrawlerTask c where c.orgCityCode=:orgCityCode and c.distCityCode=:distCityCode")
+    CrawlerTask findByOrgDistCityCode(@Param("orgCityCode") String orgCityCode,@Param("distCityCode") String distCityCode);
 
 }
