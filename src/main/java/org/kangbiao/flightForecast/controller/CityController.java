@@ -1,12 +1,13 @@
 package org.kangbiao.flightForecast.controller;
 
 import org.kangbiao.flightForecast.dao.CityDao;
-import org.kangbiao.flightForecast.domain.City;
+import org.kangbiao.flightForecast.dao.CrawlerTaskDao;
+import org.kangbiao.flightForecast.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by kangbiao on 2016/12/18.
@@ -19,8 +20,36 @@ public class CityController {
     @Autowired
     private CityDao cityDao;
 
+    @Autowired
+    private CrawlerTaskDao crawlerTaskDao;
+
     @RequestMapping("/getAll")
-    public ArrayList<City> getAll(){
-        return (ArrayList<City>) cityDao.findAll();
+    public Response getAll(){
+        Response response=new Response();
+        response.setData(cityDao.findAll());
+        response.success();
+        return response;
     }
+
+
+    @RequestMapping("/getConfigOrgCityList")
+    public Response getConfigOrgCityList(HttpServletRequest request){
+        Response response=new Response();
+
+        response.success();
+        return response;
+    }
+
+
+    @RequestMapping("/getConfigDistCityList")
+    public Response getConfigDistCityList(HttpServletRequest request){
+        Response response=new Response();
+
+        String orgCityCode=request.getParameter("orgCityCode");
+
+
+        response.success();
+        return response;
+    }
+
 }

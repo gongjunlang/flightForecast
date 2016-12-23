@@ -16,10 +16,10 @@ import java.util.List;
 @Repository
 public interface FlightPriceDao  extends CrudRepository<FlightPrice,Long>{
 
-    @Query("from FlightPrice f where f.crawlerTaskId=:crawlerTaskId and f.buyDate=:buyDate")
+    @Query("from FlightPrice f where f.crawlerTaskId=:crawlerTaskId and f.buyDate=:buyDate order by f.buyDate")
     List<FlightPrice> findByTaskIdBuyDate(@Param("crawlerTaskId") Integer crawlerTaskId, @Param("buyDate")String buyDate);
 
-    @Query("from FlightPrice f where f.crawlerTaskId=:crawlerTaskId and f.ticketDate=:ticketDate")
+    @Query("from FlightPrice f where f.crawlerTaskId=:crawlerTaskId and f.ticketDate=:ticketDate order by f.ticketDate")
     List<FlightPrice> findByTaskIdTicketDate(@Param("crawlerTaskId") Integer crawlerTaskId, @Param("ticketDate")String ticketDate);
 
 

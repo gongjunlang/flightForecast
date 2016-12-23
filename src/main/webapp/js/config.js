@@ -3,8 +3,8 @@
  * 配置文件
  */
 
-var host="localhost:63342/";
+var host="http://localhost:8080/";
 var urlConfig={};
 
 urlConfig.getCity=host+"city/getAll";
-urlConfig.getPriceTrend=host+"flight/getPriceTrend";
+urlConfig.queryByBuyDate=host+"flight/queryByBuyDate";
