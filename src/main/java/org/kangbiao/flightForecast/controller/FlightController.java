@@ -16,7 +16,7 @@ import java.io.IOException;
 
 /**
  * Created by kangbiao on 2016/12/18.
- *
+ * 机票价格信息相关接口
  */
 @RestController
 @RequestMapping(value = "/flight")
@@ -24,7 +24,6 @@ public class FlightController {
 
     @Value("${flight.interface.price-trend-url}")
     private String priceTrendUrl;
-
 
     @Autowired
     private CrawlerTaskDao crawlerTaskDao;

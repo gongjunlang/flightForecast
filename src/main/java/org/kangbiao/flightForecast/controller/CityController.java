@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Created by kangbiao on 2016/12/18.
- *
+ * 城市操作相关接口
  */
 @RestController
 @RequestMapping(value = "/city")
@@ -23,10 +23,4 @@ public class CityController {
     public ArrayList<City> getAll(){
         return (ArrayList<City>) cityDao.findAll();
     }
-
-
-
-
-
-
 }
