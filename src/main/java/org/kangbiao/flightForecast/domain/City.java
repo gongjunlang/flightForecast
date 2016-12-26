@@ -9,27 +9,21 @@ import javax.persistence.*;
 @Entity
 @Table(name = "city")
 public class City {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name="cityCode")
     private String cityCode;
 
-    @Column(name="cityName")
     private String cityName;
 
-    @Column(name="cityAbbr")
     private String cityAbbr;
 
-    @Column(name="cityEnglishName")
     private String cityEnglishName;
 
-    @Column(name="cityIataCode")
     private String cityIataCode;
 
-    @Column(name="abroad")
     private String  abroad;
 
 

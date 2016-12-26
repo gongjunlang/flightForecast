@@ -14,7 +14,7 @@ import java.util.List;
  *
  */
 @Repository
-public interface FlightPriceDao  extends CrudRepository<FlightPrice,Long>{
+public interface FlightPriceDao  extends CrudRepository<FlightPrice,Integer>{
 
     @Query("from FlightPrice f where f.crawlerTaskId=:crawlerTaskId and f.buyDate=:buyDate order by f.buyDate")
     List<FlightPrice> findByTaskIdBuyDate(@Param("crawlerTaskId") Integer crawlerTaskId, @Param("buyDate")String buyDate);

@@ -25,4 +25,7 @@ public interface CrawlerTaskDao extends CrudRepository<CrawlerTask,Integer> {
     @Query("from CrawlerTask c where c.orgCityCode=:orgCityCode and c.distCityCode=:distCityCode")
     CrawlerTask findByOrgDistCityCode(@Param("orgCityCode") String orgCityCode,@Param("distCityCode") String distCityCode);
 
+
+
+
 }

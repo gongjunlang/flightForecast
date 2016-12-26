@@ -20,9 +20,6 @@ public class CityController {
     @Autowired
     private CityDao cityDao;
 
-    @Autowired
-    private CrawlerTaskDao crawlerTaskDao;
-
     @RequestMapping("/getAll")
     public Response getAll(){
         Response response=new Response();
@@ -35,7 +32,7 @@ public class CityController {
     @RequestMapping("/getConfigOrgCityList")
     public Response getConfigOrgCityList(HttpServletRequest request){
         Response response=new Response();
-
+        response.setData(cityDao.getConfigOrgCity());
         response.success();
         return response;
     }
@@ -44,10 +41,8 @@ public class CityController {
     @RequestMapping("/getConfigDistCityList")
     public Response getConfigDistCityList(HttpServletRequest request){
         Response response=new Response();
-
         String orgCityCode=request.getParameter("orgCityCode");
-
-
+        response.setData(cityDao.getConfigDistCity(orgCityCode));
         response.success();
         return response;
     }
