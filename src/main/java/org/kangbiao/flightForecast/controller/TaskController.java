@@ -41,6 +41,7 @@ public class TaskController {
         crawlerTask.setStatus(status);
         crawlerTask.setDistCityCode(distCityCode);
         crawlerTask.setOrgCityCode(orgCityCode);
+        crawlerTask.setExcuteCount(0);
         crawlerTaskDao.save(crawlerTask);
         response.success();
         return response;

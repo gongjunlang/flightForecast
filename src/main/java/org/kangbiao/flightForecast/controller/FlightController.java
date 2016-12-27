@@ -57,10 +57,11 @@ public class FlightController {
             return response;
         }
         Map<String,List<FlightPrice>> map=new HashMap<String,List<FlightPrice>>();
-        Calendar calendar   =   new GregorianCalendar();
-        SimpleDateFormat simpleDateFormat =   new SimpleDateFormat( "yyyy-MM-dd" );
-        calendar.setTime(simpleDateFormat.parse(date));
-        calendar.add(Calendar.DATE,1);
+//        Calendar calendar   =   new GregorianCalendar();
+//        SimpleDateFormat simpleDateFormat =   new SimpleDateFormat( "yyyy-MM-dd" );
+//        calendar.setTime(simpleDateFormat.parse(date));
+//        calendar.add(Calendar.DATE,1);
+//        String beforeDate=simpleDateFormat.format(calendar.getTime());
         map.put(date,flightPriceDao.findByTaskIdBuyDate(crawlerTask.getId(),date));
         response.setData(map);
         response.success();
