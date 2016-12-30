@@ -14,7 +14,7 @@ function initOrgCity(){
         dataType: "json",
         success: function (result) {
             if (result.status) {
-                var options="";
+                var options="<option value=''>--请选择--</option>";
                 for(var i in result.data) {
                     options+="<option value='"+result.data[i].cityCode+"'>"+result.data[i].cityName+"</option>";
                 }
@@ -60,11 +60,19 @@ $("#orgCityCode").change(function(){
 });
 
 $("#confirm").click(function () {
-    var data=$("#queryByDateForm").serializeArray();
+    var data=$("#queryForm").serializeArray();
+    var type=$("#queryForm").attr("type");
+    if(type=="buy"){
+        var context={text:"按购票日期查询",xAxisName:"出发日期",dataType:"ticketDate",url:urlConfig.queryByBuyDate};
+    }
+    else {
+        var context={text:"按出发日期查询",xAxisName:"购票日期",dataType:"buyDate",url:urlConfig.queryByTicketDate};
+    }
+    console.log(context);
     $.ajax({
         type: "post",
         async: true,
-        url: urlConfig.queryByBuyDate,
+        url: context.url,
         dataType: "json",
         data:data,
         success: function (result) {
@@ -79,14 +87,14 @@ $("#confirm").click(function () {
                         symbol: 'none',
                         sampling: 'average',name:date,type:"line",data:[]};
                     for (var index in data[date]){
-                        xAxisData.push(data[date][index]['ticketDate']);
+                        xAxisData.push(data[date][index][context.dataType]);
                         temp.data.push(data[date][index]['price']);
                     }
                     series.push(temp);
                 }
                 myChart.setOption({
                     title: {
-                        text: '按购票日期查询'
+                        text: context.text
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -96,7 +104,7 @@ $("#confirm").click(function () {
                     },
                     legend: legend,
                     xAxis: {
-                        name :"出发日期",
+                        name :context.xAxisName,
                         type: 'category',
                         boundaryGap: false,
                         data: xAxisData

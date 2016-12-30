@@ -23,4 +23,5 @@ public interface FlightPriceDao  extends CrudRepository<FlightPrice,Integer>{
     List<FlightPrice> findByTaskIdTicketDate(@Param("crawlerTaskId") Integer crawlerTaskId, @Param("ticketDate")String ticketDate);
 
 
+
 }

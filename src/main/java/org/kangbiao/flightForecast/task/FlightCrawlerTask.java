@@ -39,7 +39,7 @@ public class FlightCrawlerTask {
     /**
      * 每天两点执行爬虫任务
      */
-    @Scheduled(cron ="0 26 16 * * *")
+    @Scheduled(cron ="0 0 5 * * *")
     public void process() {
         try {
             ArrayList<CrawlerTask> crawlerTasks = crawlerTaskDao.findByStatus(Const.CRAWLERTACK_STATUS_START);
@@ -47,12 +47,13 @@ public class FlightCrawlerTask {
             DateFormat format=new SimpleDateFormat("yyyy-MM-dd");
             String today=format.format(date);
             for (CrawlerTask crawlerTask : crawlerTasks) {
-                if (crawlerTask.getLastExcuteTime().equals(today)){
+                if (crawlerTask.getLastExcuteTime()!=null&&crawlerTask.getLastExcuteTime().equals(today)){
                     continue;
                 }
                 String url = priceTrendUrl.replaceFirst("\\{orgCityCode\\}", crawlerTask.getOrgCityCode())
                         .replaceFirst("\\{dstCityCode\\}", crawlerTask.getDistCityCode());
-                String response = Jsoup.connect(url).ignoreContentType(true).execute().body();
+                System.out.println(url);
+                String response = Jsoup.connect(url).timeout(10000).ignoreContentType(true).execute().body();
                 String responseJson = response.split("\\(")[1].replace(")", "");
                 Gson gson = new Gson();
                 Map jsonObject = gson.fromJson(responseJson, new TypeToken<Map<String, Object>>() {}.getType());

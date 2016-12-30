@@ -8,6 +8,7 @@ var urlConfig={};
 
 urlConfig.getCity=host+"city/getAll";
 urlConfig.queryByBuyDate=host+"flight/queryByBuyDate";
+urlConfig.queryByTicketDate=host+"flight/queryByTicketDate";
 
 urlConfig.getConfigOrgCityList=host+"city/getConfigOrgCityList";
 urlConfig.getConfigDistCityList=host+"city/getConfigDistCityList";

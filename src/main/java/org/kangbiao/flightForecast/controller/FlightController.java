@@ -67,4 +67,22 @@ public class FlightController {
         response.success();
         return response;
     }
+
+    @RequestMapping(value = "/queryByTicketDate")
+    public Response queryByTicketDate(HttpServletRequest request) throws ParseException {
+        Response response=new Response();
+        String distCityCode=request.getParameter("distCityCode");
+        String orgCityCode=request.getParameter("orgCityCode");
+        String date=request.getParameter("date");
+        CrawlerTask crawlerTask=crawlerTaskDao.findByOrgDistCityCode(orgCityCode,distCityCode);
+        if (crawlerTask==null){
+            response.setMsg("该航线任务未配置");
+            return response;
+        }
+        Map<String,List<FlightPrice>> map=new HashMap<String,List<FlightPrice>>();
+        map.put(date,flightPriceDao.findByTaskIdTicketDate(crawlerTask.getId(),date));
+        response.setData(map);
+        response.success();
+        return response;
+    }
 }
