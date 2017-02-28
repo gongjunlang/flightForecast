@@ -1,16 +1,10 @@
 package org.kangbiao.flightForecast.controller;
 
-import org.kangbiao.flightForecast.dao.CityDao;
-import org.kangbiao.flightForecast.dao.CrawlerTaskDao;
-import org.kangbiao.flightForecast.domain.CrawlerTask;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Created by kangbiao on 2016/12/16.
@@ -18,14 +12,10 @@ import java.util.List;
  */
 
 @RestController
-@EnableAutoConfiguration
+@RequestMapping(value = "/")
 public class TestController {
-
-    @Autowired
-    private CrawlerTaskDao crawlerTaskDao;
-
     @RequestMapping("/")
-    CrawlerTask home() {
-        return crawlerTaskDao.findByOrgDistCityCode("2802","902");
+    public void home(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/html/queryByBuyDate.html");
     }
 }

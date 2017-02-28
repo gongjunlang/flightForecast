@@ -3,7 +3,7 @@
  * 配置文件
  */
 
-var host="http://localhost:8080/";
+var host="http://t1.kangbiao.org:8080/";
 var urlConfig={};
 
 urlConfig.getCity=host+"city/getAll";
