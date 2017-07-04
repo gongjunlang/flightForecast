@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>邮件提醒配置</title>
+    <link href="../plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/echarts/echarts.common.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="padding-top: 50px">
+    <div class="row">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation"><a href="queryByBuyDate.html">机票价格分析</a></li>
+            <li role="presentation"><a href="crawlerConfig.html">爬虫任务配置</a></li>
+            <li role="presentation" class="active"><a href="mailConfig.html">邮件提醒配置</a></li>
+        </ul>
+    </div>
+
+    <div class="row" style="margin-top: 50px">
+        <div class="col-md-12">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="mailSubject" class="col-md-2 control-label">邮件主题</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="mailSubject" placeholder="邮件主题">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reciver" class="col-md-2 control-label">接收邮箱列表</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="3"  id="reciver" placeholder="接收邮箱列表，以半角分号分隔"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../js/config.js"></script>
+<script src="../plugin/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
